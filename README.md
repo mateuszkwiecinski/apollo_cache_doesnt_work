@@ -18,7 +18,7 @@ Versions: `com.apollographql.apollo:apollo-runtime:5.2.0`, `com.apollographql.ca
 | The refresh writes after the watcher's initial read, before it subscribes | `[stale]`, still 3 s later | **fails** |
 | Same, with one extra `CacheOnly` read after the first emission | `[stale, fresh]` | passes |
 
-The failing case is deterministic.
+The failing case is deterministic. The [Tests workflow](.github/workflows/tests.yml) runs the same command on every push to `main`, so its red run is the repro; the HTML test report is attached to each run as the `test-report` artifact.
 
 ## What happens
 
